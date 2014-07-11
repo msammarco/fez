@@ -274,7 +274,7 @@ function swfuploaderUploadError(file, errorCode, message) {
 function swfuploaderQueueComplete() {
 
 	// add a hidden field for the button clicked
-	if (null !== uploaderLastWorkflowButtonClicked) {
+	if ("undefined" !== typeof uploaderLastWorkflowButtonClicked) {
 
 		var element = dojo.byId(uploaderLastWorkflowButtonClicked);
 		var newElement = document.createElement('input');
@@ -413,7 +413,7 @@ function uploaderAddEventListeners() {
 	var workflowForm = dojo.byId('wfl_form1');
 
 	var elements = workflowForm.getElementsByTagName('input');
-	var regexp = /^workflow_button_[0-9]+$/;
+	var regexp = /^workflow_button_[0-9]+|[-1]$/;
 
 	for (var i = 0; i < elements.length; i++) {
 		if (elements[i].type == 'submit' && regexp.test(elements[i].name)) {

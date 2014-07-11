@@ -758,7 +758,6 @@ function CheckFileClassifications()
                         disableWorkflowButtons(this);
                         swfuploaderUploadFiles(this);
                         $(this).dialog("close"); //close confirmation
-                        document.wfl_form1.submit();
                     },
                     Cancel: function() {
                         $(this).dialog("close"); //close confirmation
